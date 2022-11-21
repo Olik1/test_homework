@@ -15,11 +15,19 @@ public class Main {
                 System.out.println("Введите месяц от 0 до 11");
                 stepTracker.printMenuUser();
                 int monthnumber = scanner.nextInt();
-                System.out.println("Введите день от 0 до 30");
-                int daynumber = scanner.nextInt();
-                System.out.println("Укажите количество шагов пройденных за сегодня");
-                int stepssum = scanner.nextInt();
-                stepTracker.setStepsByDay(monthnumber, daynumber, stepssum);
+                if (monthnumber >= 0 && monthnumber < 12) {
+                    System.out.println("Введите день от 0 до 30");
+                    int daynumber = scanner.nextInt();
+                    if (daynumber >= 0 && daynumber <= 30) {
+                        System.out.println("Укажите количество шагов пройденных за сегодня");
+                        int stepssum = scanner.nextInt();
+                        stepTracker.setStepsByDay(monthnumber, daynumber, stepssum);
+                    } else {
+                        System.out.println("Указан неверный диапазон, попробуйте ввести день в диапазоне от 0 до 30!");
+                    }
+                } else {
+                    System.out.println("Указан неверный диапазон, попробуйте ввести месяц в диапазоне от 0 до 11!");
+                }
             } else if (userInput == 2) {
                 System.out.println("Введите номер месяца для получения статистики");
                 stepTracker.printMenuUser();

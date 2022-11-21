@@ -1,11 +1,8 @@
-import java.util.Scanner;
-
 public class StepTracker {
 
     MonthData[] monthToData;
     Converter converter;
     int planStep;
-    Scanner scanner;
     int steps;
     int idDay;
     int idMonth;
@@ -13,7 +10,6 @@ public class StepTracker {
     public StepTracker() {
         this.planStep = 10_000;
         this.converter = new Converter();
-        scanner = new Scanner(System.in);
         int[] numMonth = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
         this.monthToData = new MonthData[12];
 
@@ -26,7 +22,7 @@ public class StepTracker {
         int[] days;
 
         public MonthData(int i) {
-            this.days = new int[30];
+            this.days = new int[31];
             for (int j = 0; j < days.length; j++) {
                 days[i] = steps;
             }
@@ -71,7 +67,7 @@ public class StepTracker {
 
     public void getStatistic(int month) {
 
-        System.out.println("Количество пройденных шагов за " + (idDay) + "  день составляет: " + getStepsByDay());
+        System.out.println("Количество пройденных шагов за " + (idDay) + " день составляет: " + getStepsByDay());
         System.out.println("Количество пройденных шагов за месяц составляет " + getTotalStepsbyMonth(month));
         System.out.println("Максимально пройденное количество шагов в этом месяце составляет " + getMaxStep());
         System.out.println("Среднее количество пройденных шагов составляет " + getAvgSteps(month));
@@ -121,3 +117,4 @@ public class StepTracker {
         return bestCount;
     }
 }
+
