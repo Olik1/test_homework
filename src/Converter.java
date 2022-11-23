@@ -1,6 +1,6 @@
 public class Converter {
-    static double DISTANCE_VALUE = 0.75;
-    static double CALORIES_VALUE = 50;
+    static final double DISTANCE_VALUE = 0.75;
+    static final double CALORIES_VALUE = 50;
 
     public double getDistance(int steps) {
         double distance = ((steps * DISTANCE_VALUE) / 1000);
