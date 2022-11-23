@@ -53,7 +53,7 @@ public class StepTracker {
 
     public int getMaxStep(int month) {
         int max = monthToData[month].days[0];
-        for (int i = 1; i < monthToData[MONTH_VALUE].days.length; i++) {
+        for (int i = 1; i < monthToData[MONTH_VALUE-1].days.length; i++) {
             if (max < monthToData[month].days[i]) {
                 max = monthToData[month].days[i];
             }
