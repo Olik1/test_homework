@@ -33,7 +33,7 @@ public class StepTracker {
         System.out.println("Среднее количество шагов за месяц: " + getAvgSteps(month));
         System.out.println("Пройденная дистанция за месяц: " + converter.getDistance(totalStepsMonth) + " км");
         System.out.println("Вы сожгли за месяц: " + converter.getSumKlc(totalStepsMonth) + " Ккал");
-        System.out.println("Лучшая серия шагов в " + month + " месяце:  " + getBestSeria(month));
+        System.out.println("Лучшая серия шагов в " + month + " месяце: " + getBestSeria(month));
     }
 
     public void printStepsByDay(int month) {
@@ -63,7 +63,7 @@ public class StepTracker {
 
     public double getAvgSteps(int month) {
         double avgSteps = 0.0;
-        avgSteps = getTotalStepsbyMonth(month) / monthToData[month].days.length;
+        avgSteps = getTotalStepsbyMonth(month) / MonthData.DAYS_VALUE;
         return avgSteps;
     }
 
