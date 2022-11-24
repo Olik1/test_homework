@@ -1,15 +1,14 @@
 public class Converter {
     static final double DISTANCE_VALUE = 0.75;
-    static final double CALORIES_VALUE = 50;
+    static final double CALORIES_VALUE = 50.0;
 
     public double getDistance(int steps) {
-        double distance = ((steps * DISTANCE_VALUE) / 1000);
-        return distance;
+        return (steps * DISTANCE_VALUE) / 1000;
+
     }
 
     public double getSumKlc(int steps) {
-        double sumcal = ((steps * CALORIES_VALUE) / 1000);
-        return sumcal;
+        return (steps * CALORIES_VALUE) / 1000;
     }
 
 }
